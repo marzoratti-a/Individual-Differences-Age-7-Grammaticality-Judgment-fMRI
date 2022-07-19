@@ -8,7 +8,7 @@ fi
 
 #Loop over all subjects and format timing files into FSL format
 for subj in `cat subjList.txt`; do
-	cd $subj/ses-7/func
+	cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f92s/upload/$subj/ses-7/func
 	cat ${subj}_ses-7_task-Sem_* | awk '{if ($3=="S_C") {print $1, $2, 1}}' > sem_ctrl_run1.txt
 	cat ${subj}_ses-7_task-Sem_* | awk '{if ($3=="S_H") {print $1, $2, 1}}' > sem_h_run1.txt
 	cat ${subj}_ses-7_task-Sem_* | awk '{if ($3=="S_L") {print $1, $2, 1}}' > sem_l_run1.txt
