@@ -1,0 +1,13 @@
+# Run script to change time files to AFNI format
+cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
+bash make_Timings.sh
+
+#Move new files into folder called stimuli
+mkdir stimuli
+cp /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-5004/ses-7/func/*.1D stimuli
+
+# Make backup versions of regressor/confound files
+cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/sub-5004/ses-7/notspecific
+cp /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/sub-5004/ses-7/notspecific/*gram_regressors.tsv /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-5004/*gram_regressors.tsv 
+cp *plaus_regressors.tsv *plaus_regressors.tsv
+cp *sem_regressors.tsv sem_regressors_BACKUP.tsv
