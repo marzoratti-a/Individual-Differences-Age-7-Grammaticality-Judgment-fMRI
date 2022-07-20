@@ -23,8 +23,9 @@ for subj in `cat subjList.txt`; do
   done
   
    # Move newly made regressor/confound files to subject folder
+     cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
      cp *_tmp.txt /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors/*_tmp.txt 
  
-  cd ../..
+  cd ../../../../upload
   
 done
