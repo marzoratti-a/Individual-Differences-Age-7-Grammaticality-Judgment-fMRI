@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# first cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
 # Check whether the file subjList.txt exists; if not, create it
 if [ ! -f subjList.txt ]; then
 	ls | grep ^sub- > subjList.txt
@@ -7,9 +7,8 @@ fi
 
 for subj in `cat subjList.txt`; do
   # Check whether regressors folder exists; if not, create it
-  if [ ! -d '/mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-5004/regressors' ]; then
-  then echo "Directory /path/to/dir DOES NOT exist." 
-	mkdir regressors
+  if [ ! -d '/mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-5004/regressors' ]; 
+	then mkdir regressors
   fi
   
   cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
