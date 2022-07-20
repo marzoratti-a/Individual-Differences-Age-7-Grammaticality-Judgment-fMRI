@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# first cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
 
 #Check whether the file subjList.txt exists; if not, create it
 if [ ! -f subjList.txt ]; then
