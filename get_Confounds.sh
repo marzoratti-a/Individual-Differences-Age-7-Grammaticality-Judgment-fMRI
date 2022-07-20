@@ -7,18 +7,11 @@ fi
 
 for subj in `cat subjList.txt`; do
   # Check whether regressors folder exists; if not, create it
-  if [ ! -d '/mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-5004/regressors' ]; 
-	then mkdir regressors
+  if [ ! -d /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/{$subj}/regressors]; 
+	then mkdir /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/{$subj}/regressors
   fi
   
   cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
-  
-  # Make backup versions of regressor/confound files
-  cp *_sem_regressors.tsv /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub/regressors/sub-5004_ses-7_sem_regressors.tsv 
-  cp *_plaus_regressors.tsv /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors/$subj_ses-7_plaus_regressors.tsv 
-  cp *_gram_regressors.tsv /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors/$subj_ses-7_gram_regressors.tsv
-  
-  cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors
   
   # Make txt files with and without header for each regressor of interest
   for reg in global_signal csf white_matter trans_x trans_y trans_z rot_x rot_y rot_z; do
@@ -29,6 +22,9 @@ for subj in `cat subjList.txt`; do
 	  done
   done
   
+   # Move newly made regressor/confound files to subject folder
+     cp *_tmp.txt /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors/*_tmp.txt 
+ 
   cd ../..
   
 done
