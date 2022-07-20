@@ -6,11 +6,6 @@ if [ ! -f subjList.txt ]; then
 fi
 
 for subj in `cat subjList.txt`; do
-  # Check whether regressors folder exists; if not, create it
-  if [ ! -d "/mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors"]; then 
-     mkdir /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors
-  fi
-  
   cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
   
   # Make txt files with and without header for each regressor of interest
@@ -22,10 +17,11 @@ for subj in `cat subjList.txt`; do
 	  done
   done
   
-   # Move newly made regressor/confound files to subject folder
-     cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
-     cp *_tmp.txt /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors/*_tmp.txt 
- 
-  cd ../../../../upload
+   # Move newly made regressor/confound files to subject folder, rename to regressors
+     cp -avr /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj
+     cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj
+     mv notspecific regressors
+     
+     cd ..
   
 done
