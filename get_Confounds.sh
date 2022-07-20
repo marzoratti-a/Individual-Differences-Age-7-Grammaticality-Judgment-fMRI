@@ -5,12 +5,13 @@ if [ ! -f subjList.txt ]; then
 	ls | grep ^sub- > subjList.txt
 fi
 
-# Check whether regressors folder exists; if not, create it
-if [ ! -d "/mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors" ]; then
-	mkdir regressors
-fi
-
 for subj in `cat subjList.txt`; do
+
+# Check whether regressors folder exists; if not, create it
+  if [ ! -d "/mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/regressors" ]; then
+	mkdir regressors
+  fi
+  
   cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific/
   
   # Make backup versions of regressor/confound files
