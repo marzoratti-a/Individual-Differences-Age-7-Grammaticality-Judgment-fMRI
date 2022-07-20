@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # first cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
 # Check whether the file subjList.txt exists; if not, create it
 if [ ! -f subjList.txt ]; then
@@ -21,7 +22,5 @@ for subj in `cat subjList.txt`; do
      cp -avr /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj
      cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj
      mv notspecific regressors
-     
-     cd ..
   
 done
