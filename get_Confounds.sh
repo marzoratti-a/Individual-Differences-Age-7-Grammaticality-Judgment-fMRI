@@ -7,8 +7,8 @@ fi
 
 for subj in `cat subjList.txt`; do
   # Check whether regressors folder exists; if not, create it
-  if [ ! -d /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/{$subj}/regressors]; 
-	then mkdir /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/{$subj}/regressors
+  if [ ! -d "/mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/{$subj}/regressors"]; then 
+     mkdir /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/{$subj}/regressors
   fi
   
   cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
