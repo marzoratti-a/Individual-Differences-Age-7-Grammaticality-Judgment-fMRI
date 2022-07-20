@@ -1,3 +1,5 @@
+# First copy event files into func folder & rename regressor files to be {$task}_regressors.tsv
+
 # Run script to change time files to AFNI format
 cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
 bash make_Timings.sh
