@@ -30,11 +30,11 @@ for subj in `cat subjList.txt`; do
 	timing_tool.py -fsl_timing_files plaus*.txt -write_timing plaus.1D
 	timing_tool.py -fsl_timing_files plaus*.txt -write_timing gram.1D
 	
-	cd ../..
+	cd ..
 	
 	mkdir stimuli
 	cp /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7/func/*.1D stimuli
 
-	cd ..
+	cd ../..
 	
 done
