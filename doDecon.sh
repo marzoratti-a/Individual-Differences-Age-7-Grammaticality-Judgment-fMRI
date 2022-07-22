@@ -13,6 +13,8 @@ endif
     -mask full_mask.nii						     \
     -polort 2                                                                \
     -num_stimts 14                                                           \
+    -fout                                       \
+    -rout                                       \
     -stim_times 1 stimuli/sem.1D 'BLOCK(2,1)'                          \
     -stim_label 1 sem                                                  \
     -stim_times 2 stimuli/plaus.1D 'BLOCK(2,1)'                        \
