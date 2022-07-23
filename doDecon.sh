@@ -8,9 +8,11 @@
     else
         set subj = s01
     endif
-
- 3dDeconvolve -input r${task}_scale.nii                            \
-        -mask stimuli/${task}_mask.nii.gz					     \
+    
+    
+foreach task ( sem plaus gram )
+ 3dDeconvolve -input r$task_scale.nii                            \
+        -mask stimuli/$task_mask.nii.gz					     \
         -polort 1                                                                \
         -xout -progress                                                     \
         -num_stimts 33                                                           \
@@ -73,3 +75,4 @@
         -fitts fitts.$subj                                                       \
         -errts errts.${subj}                                                     \
         -bucket stats.$subj                                                     \
+end
