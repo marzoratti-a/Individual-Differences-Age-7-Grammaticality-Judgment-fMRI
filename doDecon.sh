@@ -1,8 +1,7 @@
 #!/bin/tcsh
 
-# first cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
-for subj in `cat subjList.txt`; do
-cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7/func
+# first go to subject folder 
+# cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-
 
     if ( $#argv > 0 ) then
         set subj = $argv[1]
@@ -43,5 +42,3 @@ cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/b
         -errts errts.${subj}                                                     \
         -bucket stats.$subj
     done 
-cd ../../..
-done 
