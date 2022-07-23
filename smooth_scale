@@ -16,6 +16,7 @@ cd ${subj}/ses-7/func
             ${subj}_*_tag-${task}_*_bold.nii.gz
   done
   
+  
   # Loop through tasks for scaling
   for task in sem plaus gram; do
   3dTstat -prefix rm.mean_r${task}.nii r${task}_blur.nii
@@ -25,4 +26,5 @@ cd ${subj}/ses-7/func
          -prefix r${task}_scale.nii
   done
   rm rm*
+  cd ../../..
 done
