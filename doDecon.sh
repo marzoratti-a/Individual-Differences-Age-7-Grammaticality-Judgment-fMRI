@@ -44,4 +44,5 @@ for task in sem plaus gram; do
     -bucket stats.$subj
 
     done
+    cd ../../..
 done
