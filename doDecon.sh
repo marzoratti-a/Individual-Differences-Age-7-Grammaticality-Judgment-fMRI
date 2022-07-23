@@ -42,5 +42,5 @@ cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/b
         -errts errts.${subj}                                                     \
         -bucket stats.$subj
     done
-    cd ../../..
+   cd ../../..
 done
