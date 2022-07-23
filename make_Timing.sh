@@ -36,6 +36,7 @@ for subj in `cat subjList.txt`; do
 	
 	mkdir stimuli
 	mv /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7/func/*.1D stimuli
+	mv /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7/func/*_run1.txt stimuli
 
 	cd ../../..
 	
