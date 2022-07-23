@@ -11,7 +11,8 @@ cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/b
     endif
 
     for task in sem plaus gram; do
-    3dDeconvolve -input ${subj}_*_tag-${task}_*_bold.nii.gz                            \
+    
+    3dDeconvolve -input r${task}_scale.nii                            \
         -mask stimuli/${task}_mask.nii.gz					     \
         -polort 1                                                                \
         -xout -progress                                                     \
@@ -41,6 +42,6 @@ cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/b
         -fitts fitts.$subj                                                       \
         -errts errts.${subj}                                                     \
         -bucket stats.$subj
-    done \
-cd ../../.. \
-done \
+    done 
+cd ../../..
+done 
