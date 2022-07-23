@@ -9,7 +9,7 @@ fi
 
 #Loop over all subjects 
 for subj in `cat subjList.txt`; do
-
+cd ${subj}/ses-7/func
   # Loop through tasks for smoothing
   for task in sem plaus gram; do
     3dmerge -1blur_fwhm 6.0 -doall -prefix r${task}_blur.nii \
