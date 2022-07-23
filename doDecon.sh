@@ -14,7 +14,7 @@ for task in sem plaus gram; do
 
 3dDeconvolve -input *_tag-${task}_*_bold.nii.gz                            \
 #    -censor motion_${subj}_censor.1D                                         \
-    -mask full_mask.nii						     \
+    -mask ${task}_mask.nii.gz					     \
     -polort 1                                                                \
     -xout -progress                                                     \
     -num_stimts 11                                                           \
