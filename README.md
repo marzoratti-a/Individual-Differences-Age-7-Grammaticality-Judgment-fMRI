@@ -12,3 +12,6 @@
 4. Run script to get confound .txt files
    cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
    bash get_Confounds.sh
+   
+5. Run script to complete first level analysis/comparisons
+   doDecon.sh
