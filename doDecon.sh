@@ -13,8 +13,7 @@
 foreach task (sem plaus gram)
  3dDeconvolve -input r${task}_scale.nii                            \
         -mask stimuli/${task}_mask.nii.gz					     \
-        -polort 1                                                                \
-        -xout -progress                                                     \
+        -polort 1                                                                \                                                    \
         -num_stimts 15                                                           \
         -stim_times 1 stimuli/${task}.1D 'BLOCK(2,1)'                          \
         -stim_label 1 ${task}                                               \
@@ -36,7 +35,7 @@ foreach task (sem plaus gram)
         -gltsym 'SYM: ${task}_ctrl -${task}'				     \
         -glt_label 2 ctrl -${task}					     \
         
-        -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
+        -fout -tout -xout -progress -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.${subj}.${task}                                                       \
         -errts errts.${subj}.${task}                                                     \
