@@ -15,7 +15,7 @@ foreach task (sem plaus gram)
         -mask stimuli/${task}_mask.nii.gz					     \
         -polort 1                                                                \
         -xout -progress                                                     \
-        -num_stimts 33                                                           \
+        -num_stimts 15                                                           \
         -stim_times 1 stimuli/${task}.1D 'BLOCK(2,1)'                          \
         -stim_label 1 ${task}                                               \
         -stim_times 2 stimuli/${task}_ctrl.1D 'BLOCK(2,1)'                          \
