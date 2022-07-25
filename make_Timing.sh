@@ -34,7 +34,7 @@ for subj in `cat subjList.txt`; do
 	timing_tool.py -fsl_timing_files plaus_ctrl_run1.txt -write_timing plaus_ctrl.1D
 	timing_tool.py -fsl_timing_files gram_ctrl_run1.txt -write_timing gram_ctrl.1D
 	
-	if [ ! -D stimuli ]; then
+	if [ ! -d /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7/func/stimuli ]; then
 	    mkdir stimuli
 	fi
 	mv /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7/func/*.1D stimuli
