@@ -1,13 +1,6 @@
 #!/bin/bash
 
-# first cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
-# Check whether the file subjList.txt exists; if not, create it
-if [ ! -f subjList.txt ]; then
-	ls | grep ^sub- > subjList.txt
-fi
-
-for subj in `cat subjList.txt`; do
-  cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
+cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/sub-5003/ses-7/notspecific
 
 find . -type f -name "*_regressors.json" -print0 | while IFS= read -r -d '' f; do
     if str=$(grep -wE "Sem|Plaus|Gram" "$f"); then              # search the json file for the strings
