@@ -10,7 +10,7 @@
     endif
 
  3dDeconvolve -input r${task}_scale.nii                            \
-        -mask stimuli/${task}_mask.nii.gz					     \
+        -mask stimuli/mask_func_${task}.nii.gz					     \
         -polort 1                                                                \
         -xout -progress                                                     \
         -num_stimts 33                                                           \
