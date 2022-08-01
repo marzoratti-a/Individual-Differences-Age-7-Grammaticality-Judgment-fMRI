@@ -7,8 +7,8 @@ if [ ! -f subjList.txt ]; then
 	ls | grep ^sub- > subjList.txt
 fi
 
-for subj in `cat subjList.txt`; do
-  cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/$subj
+# for subj in `cat subjList.txt`; do
+  cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/sub-5003.ses-7
   
   find . -type d -name "*-mask.tag-anat.tag-*" -print0 |
   while IFS= read -r -d '' filename
@@ -50,6 +50,6 @@ for subj in `cat subjList.txt`; do
     
     3dmask_tool -inputs mask_func_Gram.nii.gz mask_anat_Gram.nii.gz -union -prefix gram_full_mask.nii
     
-     3dmask_tool -inputs mask_func_Gram.nii.gz mask_anat_Gram.nii.gz -union -prefix gram_full_mask.nii
+    3dmask_tool -inputs mask_func_Gram.nii.gz mask_anat_Gram.nii.gz -union -prefix gram_full_mask.nii
     
-done
+#done
