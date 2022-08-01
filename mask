@@ -1,6 +1,6 @@
  find . -type d -name "dt-neuro-mask.tag-anat.tag-*" -print0 |
   while IFS= read -r -d '' filename
-  cd mnt/${filename}
+  cd ${filename}
   do
     prefix=${filename%.*}
     suffix=$(
