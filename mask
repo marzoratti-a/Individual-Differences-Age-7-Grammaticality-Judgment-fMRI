@@ -10,6 +10,30 @@ fi
 for subj in `cat subjList.txt`; do
   cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/$subj
   subjid=${subj%.ses-7*}
+  
+     if [ ! -d mask ]; then
+      mkdir mask
+   fi
+   if [ ! -f func.txt ]; then
+      ls | grep ^dt-neuro-mask.tag-brain.tag- > func.txt
+   fi
+
+    for func_folder in `cat func.txt`; do
+      cd ${func_folder}
+      suffix=$(
+          awk '
+              match($0,/Sem|Plaus|Gram/) {
+                  print tolower(substr($0,RSTART,RLENGTH))
+                  exit
+              }
+          ' "_info.json"
+      )
+      echo $suffix
+      mv "mask.nii.gz" "mask_func_$suffix.nii.gz" 
+      cp "mask_func_$suffix.nii.gz" ../mask
+      cd ..
+     done
+
      cd mask
      
      cp -r /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/$subj/mask /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subjid/ses-7/func
