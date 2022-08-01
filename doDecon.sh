@@ -32,7 +32,7 @@
         -gltsym 'SYM: sem -sem_ctrl'				     \
         -glt_label 1 sem -ctrl					     \
         -gltsym 'SYM: sem_ctrl -sem'				     \
-        -glt_label 2 ctrl -sem					     \
+        -glt_label 2 ctrl -sem					     
 
         -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
