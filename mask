@@ -5,7 +5,7 @@
     ls | grep ^dt-neuro-mask.tag-anat.tag- > anat.txt
  fi
   
-  for anat_folder in `anat.txt`; do
+  for anat_folder in `cat anat.txt`; do
     cd ${anat_folder}
     suffix=$(
         awk '
