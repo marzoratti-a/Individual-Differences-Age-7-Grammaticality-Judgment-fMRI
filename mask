@@ -13,6 +13,5 @@
     )
     echo $suffix
     mv "mask.nii.gz" "mask_anat_$suffix.nii.gz" 
-    cd  /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/sub-5003.ses-7
     done
-    
+    cd  /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/sub-5004.ses-7
