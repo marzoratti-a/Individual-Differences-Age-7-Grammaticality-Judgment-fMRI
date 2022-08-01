@@ -14,28 +14,4 @@
     mv "mask.nii.gz" "mask_anat_$suffix.nii.gz" 
     done
    
-   cd ..
-   
-     find . -type d -name "*-mask.tag-brain.tag-*" -print0 |
-  while IFS= read -r -d '' filename
-  do
-    cd ${filename}
-    prefix=${filename%.*}
-    suffix=$(
-        awk '
-            match($0,/Sem|Plaus|Gram/) {
-                print tolower(substr($0,RSTART,RLENGTH))
-                exit
-            }
-        ' "_info.json"
-    )
-    mv "mask.nii.gz" "mask_func_$suffix.nii.gz" 
-    done
-    
-    cd ..
-    
-    3dmask_tool -inputs mask_func_Sem.nii.gz mask_anat_Sem.nii.gz -union -prefix sem_full_mask.nii
-    
-    3dmask_tool -inputs mask_func_Gram.nii.gz mask_anat_Gram.nii.gz -union -prefix gram_full_mask.nii
-    
-    3dmask_tool -inputs mask_func_Gram.nii.gz mask_anat_Gram.nii.gz -union -prefix gram_full_mask.nii
+  
