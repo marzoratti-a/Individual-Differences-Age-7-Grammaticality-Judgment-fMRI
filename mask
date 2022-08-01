@@ -16,5 +16,6 @@
         ' "_info.json"
     )
     echo $suffix
-    cp "mask.nii.gz" ../../maskcombo/"mask_anat_$suffix.nii.gz" 
+    mv "mask.nii.gz" "mask_anat_$suffix.nii.gz" 
+    cp "mask_anat_$suffix.nii.gz" ../../maskcombo/mask_anat_$suffix.nii.gz
    done
