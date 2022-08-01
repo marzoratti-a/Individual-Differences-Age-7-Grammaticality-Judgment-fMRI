@@ -1,9 +1,11 @@
  if [ ! -d maskcombo ]; then
   	mkdir maskcombo
  fi
- anat=$(ls | grep ^dt-neuro-mask.tag-anat.tag-)
-  for folder in $anat; do
-    cd ${anat}
+ if [ ! -f anat.txt ]; then
+	   ls | grep ^dt-neuro-mask.tag-anat.tag- > anat.txt
+  fi
+  for anat_folder in `anat.txt`; do
+    cd ${anat_folder}
     suffix=$(
         awk '
             match($0,/Sem|Plaus|Gram/) {
