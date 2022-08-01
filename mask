@@ -1,8 +1,9 @@
- find . -type d -name "dt-neuro-mask.tag-anat.tag-*" -print0 |
-  while IFS= read -r -d '' filename
-  cd ${filename}
-  do
-    prefix=${filename%.*}
+ if [ ! -d maskcombo ]; then
+  	mkdir maskcombo
+ fi
+ anat=$(ls | grep ^dt-neuro-mask.tag-anat.tag-)
+  for folder in $anat; do
+    cd ${anat}
     suffix=$(
         awk '
             match($0,/Sem|Plaus|Gram/) {
@@ -12,6 +13,5 @@
         ' "_info.json"
     )
     echo $suffix
-    mv "mask.nii.gz" "mask_anat_$suffix.nii.gz" 
-    done
-    cd  /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/sub-5004.ses-7
+    cp "mask.nii.gz" ../../maskcombo/"mask_anat_$suffix.nii.gz" 
+   done
