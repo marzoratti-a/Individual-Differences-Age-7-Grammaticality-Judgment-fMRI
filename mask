@@ -20,3 +20,34 @@
     cp "mask_anat_$suffix.nii.gz" ../maskcombo
     cd ..
    done
+   
+ if [ ! -d maskcombo ]; then
+    mkdir maskcombo
+ fi
+ if [ ! -f func.txt ]; then
+    ls | grep ^dt-neuro-mask.tag-brain.tag- > func.txt
+ fi
+  
+  for func_folder in `cat func.txt`; do
+    cd ${func_folder}
+    suffix=$(
+        awk '
+            match($0,/Sem|Plaus|Gram/) {
+                print tolower(substr($0,RSTART,RLENGTH))
+                exit
+            }
+        ' "_info.json"
+    )
+    echo $suffix
+    mv "mask.nii.gz" "mask_func_$suffix.nii.gz" 
+    cp "mask_func_$suffix.nii.gz" ../maskcombo
+    cd ..
+   done
+   
+   cd maskcombo
+   3dmask_tool -inputs mask_func_sem.nii.gz mask_anat_sem.nii.gz -union -prefix sem_full_mask.nii
+   
+   3dmask_tool -inputs mask_func_plaus.nii.gz mask_anat_plaus.nii.gz -union -prefix plaus_full_mask.nii
+    
+   3dmask_tool -inputs mask_func_gram.nii.gz mask_anat_gram.nii.gz -union -prefix gram_full_mask.nii
+    
