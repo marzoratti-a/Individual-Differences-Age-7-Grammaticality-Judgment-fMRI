@@ -15,3 +15,10 @@
    
 5. Run script to complete first level analysis/comparisons
    doDecon.sh
+ 
+TO ACCESS EXTERNAL HARD DRIVE
+sudo mkdir /mnt/d
+sudo mount -t drvfs D: /mnt/d
+
+AT THE END
+sudo umount /mnt/f
