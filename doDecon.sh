@@ -34,7 +34,7 @@
         -gltsym 'SYM: sem_ctrl -sem'				     \
         -glt_label 2 ctrl -sem					     
 
-        -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
+        -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.sem                                                       \
         -errts errts.${subj}.sem                                                     \
@@ -65,7 +65,7 @@
         -gltsym 'SYM: plaus_ctrl -plaus'				     \
         -glt_label 2 ctrl -plaus					     \
 
-        -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
+         -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.plaus                                                      \
         -errts errts.${subj}.plaus                                                    \
@@ -96,7 +96,7 @@
         -gltsym 'SYM: gram_ctrl -gram'				     \
         -glt_label 2 ctrl -gram					     \
 
-        -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
+         -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.gram                                                       \
         -errts errts.${subj}.gram                                                     \
