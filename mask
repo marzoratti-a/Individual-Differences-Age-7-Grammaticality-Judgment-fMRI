@@ -1,5 +1,5 @@
- find -type d -name "dt-neuro-mask.tag-anat.tag-*" -print0 |
-  while IFS= read -r -d ' ' filename
+ find . -type d -name "dt-neuro-mask.tag-anat.tag-*" -print0 |
+  while IFS= read -r -d '' filename
   do
     cd ${filename}
     prefix=${filename%.*}
@@ -11,8 +11,5 @@
             }
         ' "_info.json"
     )
-    mv mask.nii.gz mask_anat_$suffix.nii.gz 
-    cd ..
+    mv "mask.nii.gz" "mask_anat_$suffix.nii.gz" 
     done
-   
-  
