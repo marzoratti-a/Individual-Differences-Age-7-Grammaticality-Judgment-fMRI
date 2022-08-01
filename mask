@@ -1,7 +1,7 @@
  find . -type d -name "dt-neuro-mask.tag-anat.tag-*" -print0 |
   while IFS= read -r -d '' filename
+  cd ${filename}
   do
-    cd ${filename}
     prefix=${filename%.*}
     suffix=$(
         awk '
@@ -11,5 +11,6 @@
             }
         ' "_info.json"
     )
+    echo $suffix
     mv "mask.nii.gz" "mask_anat_$suffix.nii.gz" 
     done
