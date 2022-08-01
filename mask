@@ -1,5 +1,5 @@
  find -type d -name "*-mask.tag-anat.tag-*" -print0 |
-  while IFS= read filename
+  while IFS= read -r filename
   do
     cd ${filename}
     prefix=${filename%.*}
