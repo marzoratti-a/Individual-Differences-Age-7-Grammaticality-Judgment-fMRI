@@ -34,11 +34,11 @@
         -gltsym 'SYM: sem_ctrl -sem'				     \
         -glt_label 2 ctrl -sem					     
 
-        -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
+        -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.sem                                                       \
         -errts errts.${subj}.sem                                                     \
-        -bucket stats.$subj.sem                                                   \
+        -bucket stats.$subj.sem                                                   
 
  3dDeconvolve -input rplaus_scale.nii                            \
         -mask mask/mask_func_plaus.nii.gz					     \
@@ -65,11 +65,11 @@
         -gltsym 'SYM: plaus_ctrl -plaus'				     \
         -glt_label 2 ctrl -plaus					     \
 
-        -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
+        -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.plaus                                                      \
         -errts errts.${subj}.plaus                                                    \
-        -bucket stats.$subj.plaus                        \
+        -bucket stats.$subj.plaus                        
         
   3dDeconvolve -input rgram_scale.nii                            \
         -mask mask/mask_func_gram.nii.gz					     \
@@ -96,8 +96,9 @@
         -gltsym 'SYM: gram_ctrl -gram'				     \
         -glt_label 2 ctrl -gram					     \
 
-        -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
+        -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
         -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.gram                                                       \
         -errts errts.${subj}.gram                                                     \
-        -bucket stats.$subj.gram                        \
+        -bucket stats.$subj.gram                        
+ 
