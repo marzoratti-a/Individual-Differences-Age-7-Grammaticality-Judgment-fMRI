@@ -1,4 +1,4 @@
- find . -type d -name "*-mask.tag-anat.tag-*" -print0 |
+ find -type d -name "*-mask.tag-anat.tag-*" -print0 |
   while IFS= read -r -d '' filename
   do
     cd ${filename}
