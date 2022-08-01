@@ -12,6 +12,7 @@
         ' "_info.json"
     )
     mv mask.nii.gz mask_anat_$suffix.nii.gz 
+    cd ..
     done
    
   
