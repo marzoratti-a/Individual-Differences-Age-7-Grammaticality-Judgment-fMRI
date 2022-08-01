@@ -2,8 +2,9 @@
   	mkdir maskcombo
  fi
  if [ ! -f anat.txt ]; then
-	   ls | grep ^dt-neuro-mask.tag-anat.tag- > anat.txt
-  fi
+    ls | grep ^dt-neuro-mask.tag-anat.tag- > anat.txt
+ fi
+  
   for anat_folder in `anat.txt`; do
     cd ${anat_folder}
     suffix=$(
