@@ -10,7 +10,7 @@
     endif
     
  3dDeconvolve -input rsem_scale.nii                            \
-        -mask stimuli/sem_full_mask.nii.gz					     \
+        -mask mask/mask_func_sem.nii.gz					     \
         -polort 1                                                                \
         -xout -progress                                                     \
         -num_stimts 11                                                           \
@@ -41,7 +41,7 @@
         -bucket stats.$subj.sem                                                   \
 
  3dDeconvolve -input rplaus_scale.nii                            \
-        -mask stimuli/plaus_full_mask.nii.gz					     \
+        -mask mask/mask_func_plaus.nii.gz					     \
         -polort 1                                                                \
         -xout -progress                                                     \
         -num_stimts 11                                                           \
@@ -72,7 +72,7 @@
         -bucket stats.$subj.plaus                        \
         
   3dDeconvolve -input rgram_scale.nii                            \
-        -mask stimuli/gram_full_mask.nii.gz					     \
+        -mask mask/mask_func_gram.nii.gz					     \
         -polort 1                                                                \
         -xout -progress                                                     \
         -num_stimts 11                                                           \
