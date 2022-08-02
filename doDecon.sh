@@ -56,7 +56,7 @@
         -stim_file 10 regressors/csf_plaus_noHead_tmp.txt'[0]' -stim_base 10 -stim_label 10 csf_plaus     \
         -stim_file 11 regressors/white_matter_plaus_noHead_tmp.txt'[0]' -stim_base 11 -stim_label 11 white_matter_plaus     \
         -jobs 8  \
-        # tells AFNI to run GLT based on label names
+    
         -gltsym 'SYM: plaus -plaus_ctrl'				     \
         -glt_label 1 plaus -ctrl					     \
         -gltsym 'SYM: plaus_ctrl -plaus'				     \
@@ -87,7 +87,6 @@
         -stim_file 10 regressors/csf_gram_noHead_tmp.txt'[0]' -stim_base 10 -stim_label 10 csf_gram     \
         -stim_file 11 regressors/white_matter_gram_noHead_tmp.txt'[0]' -stim_base 11 -stim_label 11 white_matter_gram     \
         -jobs 8  \
-        # tells AFNI to run GLT based on label names
         -gltsym 'SYM: gram -gram_ctrl'				     \
         -glt_label 1 gram -ctrl					     \
         -gltsym 'SYM: gram_ctrl -gram'				     \
