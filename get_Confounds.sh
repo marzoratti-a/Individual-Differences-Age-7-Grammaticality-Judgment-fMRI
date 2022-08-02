@@ -1,13 +1,9 @@
 #!/bin/bash
 
 # first cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload
-# Check whether the file subjList.txt exists; if not, create it
-if [ ! -f subjList.txt ]; then
-	ls | grep ^sub- > subjList.txt
-fi
 
-for subj in `cat subjList.txt`; do
-  cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific
+
+  cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/sub-5036/ses-7/notspecific
   
   # Make txt files with and without header for each regressor of interest
   for reg in global_signal csf white_matter trans_x trans_y trans_z rot_x rot_y rot_z; do
@@ -19,8 +15,7 @@ for subj in `cat subjList.txt`; do
   done
   
    # Move newly made regressor/confound files to subject folder, rename to regressors
-     cp -avr /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/$subj/ses-7/notspecific /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7
-     cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/$subj/ses-7
+     cp -avr /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/sub-5036/ses-7/notspecific /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-5036/ses-7
+     cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-5036/ses-7
      mv notspecific regressors
-  
-done
+
