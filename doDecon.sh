@@ -1,8 +1,5 @@
 #!/bin/tcsh
 
-# first go to subject folder 
-# cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/upload/sub-
-
     if ( $#argv > 0 ) then
         set subj = $argv[1]
     else
@@ -28,7 +25,7 @@
         -stim_file 10 regressors/csf_sem_noHead_tmp.txt'[0]' -stim_base 10 -stim_label 10 csf_sem     \
         -stim_file 11 regressors/white_matter_sem_noHead_tmp.txt'[0]' -stim_base 11 -stim_label 11 white_matter_sem     \
         -jobs 8  \
-        # tells AFNI to run GLT based on label names
+ 
         -gltsym 'SYM: sem -sem_ctrl'				     \
         -glt_label 1 sem -ctrl					     \
         -gltsym 'SYM: sem_ctrl -sem'				     \
