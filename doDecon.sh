@@ -32,7 +32,6 @@
         -glt_label 2 ctrl -sem					     
 
         -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
-        -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.sem                                                       \
         -errts errts.${subj}.sem                                                     \
         -bucket stats.$subj.sem                                                   
@@ -63,7 +62,6 @@
         -glt_label 2 ctrl -plaus					     \
 
          -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
-        -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.plaus                                                      \
         -errts errts.${subj}.plaus                                                    \
         -bucket stats.$subj.plaus                        
@@ -93,7 +91,6 @@
         -glt_label 2 ctrl -gram					     \
 
          -fout -tout -rout -x1D X.xmat.1D -xjpeg X.jpg                                  \
-        -x1D_uncensored X.nocensor.xmat.1D                                       \
         -fitts fitts.$subj.gram                                                       \
         -errts errts.${subj}.gram                                                     \
         -bucket stats.$subj.gram                        
