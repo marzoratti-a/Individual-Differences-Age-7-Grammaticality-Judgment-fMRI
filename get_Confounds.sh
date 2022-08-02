@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/sub-5003/ses-7/notspecific
+cd /mnt/c/users/anama/onedrive/documents/labwork/proj-62bddf5ef3194eded6f9293d/bids/derivatives/brainlife.app-fmriprep/sub-5036/ses-7/notspecific
 
 find . -type f -name "*_regressors.json" -print0 |
 while IFS= read -r -d '' filename
