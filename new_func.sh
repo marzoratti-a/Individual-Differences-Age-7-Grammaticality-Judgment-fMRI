@@ -29,7 +29,7 @@ for subj in `cat subjList.txt`; do
           ' "_info.json"
       )
       echo $suffix
-      mv "bold.nii.gz" "$subj_$suffix_bold.nii.gz" 
+      mv "*.nii.gz" "$subj_$suffix_bold.nii.gz" 
       cp "$subj_$suffix_bold.nii.gz" ../bold
       cd ..
      done
