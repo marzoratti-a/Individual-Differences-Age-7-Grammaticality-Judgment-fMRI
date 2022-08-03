@@ -29,7 +29,7 @@ for subj in `cat subjList.txt`; do
           ' "_info.json"
       )
       echo $task $subjid
-      mv ".nii.gz" "${subjid}_${task}_bold.nii.gz" 
+      mv "bold.nii.gz" "${subjid}_${task}_bold.nii.gz" 
       cp "${subjid}_${task}_bold.nii.gz" ../bold
       cd ..
      done
