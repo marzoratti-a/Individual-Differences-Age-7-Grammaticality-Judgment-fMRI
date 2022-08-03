@@ -28,9 +28,9 @@ for subj in `cat subjList.txt`; do
               }
           ' "_info.json"
       )
-      echo $suffix
-      mv "bold.nii.gz" "$subj_$suffix_bold.nii.gz" 
-      cp "$subj_$suffix_bold.nii.gz" ../bold
+      echo $task $subj
+      mv ".nii.gz" "$subj_$task_bold.nii.gz" 
+      cp "$subj_$task_bold.nii.gz" ../bold
       cd ..
      done
 
