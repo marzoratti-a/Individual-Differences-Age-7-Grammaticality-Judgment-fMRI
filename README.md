@@ -22,3 +22,5 @@ sudo mount -t drvfs D: /mnt/d
 
 AT THE END
 sudo umount /mnt/f
+
+# Scripts 00-05: Primary analytic scripts, run in order.
